@@ -1,0 +1,86 @@
+:root {
+    --primary-color: #0d1b2a; --secondary-color: #d4a373; --background-color: #fefae0;
+    --text-color: #495057; --white-color: #ffffff; --light-gray: #f8f9fa;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Poppins', sans-serif; background-color: var(--white-color); color: var(--text-color); line-height: 1.7; direction: ltr; }
+
+/* ======== NEW UNIFIED HEADER & HERO STYLES ======== */
+#main-header {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1547993227-0ce182236a37?q=80&w=1974&auto=format&fit=crop') no-repeat center center/cover;
+    color: var(--white-color);
+    display: flex;
+    flex-direction: column;
+}
+nav {
+    padding: 1rem 5%;
+    background: rgba(0,0,0,0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo { font-size: 1.5rem; font-weight: 700; color: var(--white-color); }
+.nav-links { list-style: none; display: flex; gap: 2rem; }
+.nav-links a { text-decoration: none; color: var(--white-color); font-weight: 600; transition: color 0.3s; }
+.nav-links a:hover { color: var(--secondary-color); }
+.hero-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 2rem;
+}
+.hero-content h1 { font-size: 3.5rem; margin-bottom: 1rem; }
+.hero-content p { font-size: 1.2rem; max-width: 600px; margin-bottom: 2rem; }
+.cta-button { background: var(--secondary-color); color: var(--white-color); padding: 15px 35px; text-decoration: none; font-weight: 600; border-radius: 50px; transition: all 0.3s; }
+.cta-button:hover { background: var(--white-color); color: var(--secondary-color); transform: translateY(-3px); }
+
+/* ======== General Section Styles ======== */
+.section-container { padding: 5rem 5%; }
+.section-title { font-size: 2.5rem; text-align: center; color: var(--primary-color); margin-bottom: 1rem; }
+.section-subtitle { text-align: center; max-width: 600px; margin: 0 auto 3rem auto; }
+
+/* ======== Features Section ======== */
+.features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+.feature-card { background: var(--light-gray); padding: 2.5rem 2rem; border-radius: 10px; text-align: center; }
+.feature-card i { font-size: 3rem; color: var(--secondary-color); margin-bottom: 1.5rem; }
+.feature-card h3 { color: var(--primary-color); margin-bottom: 1rem; }
+
+/* ======== Pricing Section ======== */
+#pricing { background-color: var(--light-gray); }
+.pricing-grid { display: flex; justify-content: center; flex-wrap: wrap; gap: 2rem; }
+.pricing-card { background: var(--white-color); padding: 2.5rem; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); width: 350px; text-align: center; position: relative; border: 2px solid transparent; display: flex; flex-direction: column; }
+.pricing-card.recommended { border-color: var(--secondary-color); }
+.pricing-card .badge { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--secondary-color); color: var(--white-color); padding: 5px 15px; border-radius: 50px; font-size: 0.9rem; font-weight: 600; }
+.pricing-card h3 { font-size: 1.5rem; }
+.pricing-card .price { font-size: 3rem; font-weight: 700; color: var(--primary-color); margin: 1rem 0; }
+.pricing-card .price span { font-size: 1rem; font-weight: 400; }
+.pricing-card ul { list-style: none; margin: 2rem 0; text-align: left; }
+.pricing-card ul li { margin-bottom: 1rem; }
+.pricing-card form { margin-top: auto; } /* Pushes button to bottom */
+.pricing-button { width: 100%; padding: 15px; border: none; border-radius: 5px; background: var(--primary-color); color: var(--white-color); font-size: 1rem; font-weight: 600; cursor: pointer; transition: all 0.3s; }
+.pricing-card.recommended .pricing-button { background: var(--secondary-color); }
+.pricing-button:hover { transform: translateY(-3px); }
+
+/* ======== Visual Break Section ======== */
+#visual-break { padding: 8rem 2rem; background: linear-gradient(rgba(13, 27, 42, 0.7), rgba(13, 27, 42, 0.7)), url('https://images.unsplash.com/photo-1517005942263-75a42d96ee25?q=80&w=2070&auto=format&fit=crop') no-repeat center center; background-size: cover; background-attachment: fixed; text-align: center; color: var(--white-color); }
+.visual-content h2 { font-size: 2.8rem; }
+.visual-content p { font-size: 1.2rem; }
+
+/* ======== Chatbot Demo, Footer, Popup (No Changes) ======== */
+.chatbot-main-container { position: relative; max-width: 800px; margin: 0 auto; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); min-height: 600px; }
+.chatbot-main-container iframe { width: 100%; height: 600px; border: none; }
+#activation-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(13, 27, 42, 0.95); z-index: 10; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: white; transition: all 0.5s; }
+#activation-overlay h3 { font-size: 2rem; margin-bottom: 2rem; }
+#start-chat-btn { background: var(--secondary-color); color: var(--white-color); border: none; padding: 15px 30px; font-size: 1.2rem; border-radius: 8px; cursor: pointer; font-weight: bold; transition: transform 0.2s; }
+#start-chat-btn:hover { transform: scale(1.05); }
+#footer { background: var(--primary-color); color: var(--white-color); text-align: center; padding: 2rem; }
+.upgrade-popup-container { display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; border: 2px solid var(--secondary-color); padding: 25px; z-index: 1001; width: 90%; max-width: 400px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); text-align: center; }
+.upgrade-popup-container h3 { color: var(--primary-color); margin-bottom: 15px; }
+.view-plans-button { display: block; background: var(--secondary-color); color: white; text-align: center; padding: 12px; text-decoration: none; border-radius: 5px; font-weight: bold; margin-bottom: 10px; transition: background-color 0.3s; }
+.close-button { background: #ccc; color: #333; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer; width: 100%; }
+@media (max-width: 768px) { .nav-links { display: none; } .hero-content h1 { font-size: 2.5rem; } .pricing-grid { flex-direction: column; align-items: center; } }
